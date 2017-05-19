@@ -1,0 +1,12 @@
+
+.navbar-logo img {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
+
+
+
+.search-wrapper .input-group {
+  margin-top: 10px;
+}
