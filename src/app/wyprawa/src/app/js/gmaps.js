@@ -49,13 +49,6 @@ function initMap(callback) {
     // Create the Google Map using our element and options defined above
     map = new google.maps.Map(mapElement, mapOptions);
     callback(map);
-
-    // Let's also add a marker while we're at it
-    var marker = new google.maps.Marker({
-        position: rzeszow,
-        map: map,
-        title: 'Snazzy!'
-    });
 }
 
 export { initAll };

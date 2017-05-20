@@ -1,31 +1,32 @@
 <div class="container">
-    <div class="container-fluid">
-      <div class="navbar-logo">
-        <img src="./assets/logo.png">
-      </div>
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">{{title}}</a>
-        <div class="search-wrapper">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-            <input id="search" type="text" class="form-control" placeholder="Wyszukaj miejsce...">
-          </div>
+  <div class="container-fluid">
+    <div class="navbar-logo">
+      <img src="./assets/logo.png">
+    </div>
+    <div class="navbar-header">
+      <a class="navbar-brand col-lg-4" href="#">{{title}}</a>
+      <div class="search-wrapper col-lg-8">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+          <input id="search" type="text" class="form-control" placeholder="Wyszukaj miejsce...">
         </div>
       </div>
-
     </div>
 
-  <div class="container-fluid">
-    <nav class="navbar navbar-default">
+  </div>
+
+  <nav class="navbar navbar-default col-lg-2">
     <div class="sidebar-wrapper">
       <ul class="nav sidebar-nav">
         <li class="active"><a href="#">Strona domowa</a></li>
-        <li><a href="#">Profil</a></li>
-        <li><a href="#">Znajomi</a></li>
-        <li><a href="#">Wyprawy</a></li>
+        <li><a href="#">Profil <img class="nav-icon" height="30px" src="./assets/profile.png"/></a></li>
+        <li><a href="#">Znajomi <img class="nav-icon" height="30px" src="./assets/friends.png"/> </a></li>
+        <li><a href="#">Wyprawy <img class="nav-icon" height="30px" src="./assets/trips.png"/> </a></li>
+        <li><a href="#">Oferty <img class="nav-icon" height="30px" src="./assets/offers.png" /></a></li>
+        <li><a href="#">Zdjęcia <img class="nav-icon" height="30px" src="./assets/photos.png" /></a> </li>
       </ul>
     </div>
-    </nav>
-  </div>
+  </nav>
+
   <app-dashboard></app-dashboard>
 </div>

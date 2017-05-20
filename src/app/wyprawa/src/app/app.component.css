@@ -5,8 +5,19 @@
   top: 10px;
 }
 
+.navbar-brand {
+  position: relative;
+  left: -30px;
+}
 
+.nav-icon {
+  position: fixed;
+  left: 200px;
+  padding-bottom: 8px;
+  margin-bottom: 2px;
+}
 
 .search-wrapper .input-group {
+  max-width: 50%;
   margin-top: 10px;
 }
