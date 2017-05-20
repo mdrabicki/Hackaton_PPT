@@ -16,6 +16,9 @@ export class DashboardComponent implements OnInit {
 
   places: Place[];
 
+  private iconUnvisited = './assets/unvisited.png';
+  private iconVisited = './assets/visited.png';
+
   getPlaces() {
     this.placeService.getAll()
       .then(
@@ -27,18 +30,30 @@ export class DashboardComponent implements OnInit {
 
   private markPlaces() {
     for(let i = 0; i < this.places.length; i++) {
-      console.log(this.places[i]);
-      this.mark(this.places[i].latitude, this.places[i].longitude, this.places[i].name);
+      this.mark(this.places[i]);
     }
   }
 
-  private mark(lat: number, longit: number, title: string) {
+  private mark(placeParam: Place) {
+    let lat: number = placeParam.latitude,
+      longit: number = placeParam.longitude,
+      title: string = placeParam.description;
     let place = new google.maps.LatLng(lat, longit);
+    console.log("visited: " + placeParam.visited);
+    let icon = placeParam.visited ? this.iconVisited:this.iconUnvisited;
     let marker = new google.maps.Marker({
       position: place,
       map: this.map,
+      icon: icon,
       title: title
     });
+
+    google.maps.event.addListener(marker, 'mouseover', this.showImage);
+  }
+
+  private showImage() {
+
+    console.log("show image");
   }
 
   constructor(
@@ -49,6 +64,7 @@ export class DashboardComponent implements OnInit {
     initAll((map) => this.map = map);
 
     this.getPlaces();
+    //this.mark(50.0411, 21.999120, "test");
 
     console.log(this.map);
   }
